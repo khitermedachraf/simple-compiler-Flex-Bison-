@@ -1,2 +1,4 @@
 # simple-compiler-Flex-Bison-
-1. Introduction Le but de ce projet est de réaliser un mini-compilateur de langage décrit ci-dessous, en effectuant les différentes phases de la compilation : lexicale, syntaxique, sémantique et génération du code intermédiaire. 2. Description du Langage
+1. Introduction :
+   The goal of this project is to create a language mini-compiler described below, by performing the different phases of compilation: lexical, syntactic, semantic and generation of the intermediate code.
+2.  Language Description:
