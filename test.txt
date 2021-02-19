@@ -1,0 +1,20 @@
+##PROCESS$
+##ARRAY$
+##LOOP$
+Programme Acad
+{
+CONST 
+INTEGER :: X5=5$
+INTEGER :: X6=5 //X7=7 $
+STRING :: S="mehdi" // S1="jhfgdfhgf"$
+CHAR :: C='c' // C1='g'$
+VAR 
+INTEGER :: X1$
+INTEGER :: X2 // X3 $
+INTEGER :: X3[4]$
+INTEGER :: X4[4] // X5[4]$ 
+X6 :=X5$
+X6:=34$
+C:='r'$
+S:="sgdfgdfg"$ 
+}
