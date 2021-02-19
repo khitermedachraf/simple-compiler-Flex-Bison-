@@ -3,18 +3,32 @@
 ##LOOP$
 Programme Acad
 {
-CONST 
-INTEGER :: X5=5$
-INTEGER :: X6=5 //X7=7 $
+CONST   
 STRING :: S="mehdi" // S1="jhfgdfhgf"$
 CHAR :: C='c' // C1='g'$
+STRING :: Achraf="khitermohamed3545"$
 VAR 
 INTEGER :: X1$
 INTEGER :: X2 // X3 $
-INTEGER :: X3[4]$
-INTEGER :: X4[4] // X5[4]$ 
-X6 :=X5$
-X6:=34$
-C:='r'$
-S:="sgdfgdfg"$ 
+INTEGER :: X7$
+INTEGER :: Tab[3]$
+REAL :: Pi$
+STRING :: Shelby$
+STRING :: TabString[5]$
+CHAR :: Character$
+CHAR :: TabChar[1]$
+X6:=66$
+X7:= 77$
+X7:=X1$
+Character:='g'$
+Shelby:="tomass"$
+X2:=3$
+X7:=Tab[3]$
+X7:=Tab[X2]$
+Tab[X2]:=X7$
+X2:=1$
+TabChar[X2]:='k'$
+TabString[X2]:="hahah"$
+Pi:= 3.14$
+
 }

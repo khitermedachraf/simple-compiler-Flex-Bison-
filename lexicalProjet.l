@@ -1,6 +1,7 @@
 %{
 	#include "syntaxiqueProjet.tab.h"   
-   int nb_ligne=1;
+    extern nb_ligne;
+    extern Col;
 %}
 
 lettre [a-zA-Z]
@@ -9,67 +10,179 @@ IDF [A-Z]({lettre}|{chiffre})*
 cst_int {chiffre}+
 cst_char ({lettre}|{chiffre})
 cst_string ({lettre}|{chiffre})+
-cst_real {chiffre}+[\.]({chiffre})+
+cst_real ({chiffre}+[\.]({chiffre})+)|([(-]({chiffre}+[\.]({chiffre})+)[)])
 
 
 %%
 
-Programme 	{return mc_programme;}
-PROCESS 	{return mc_process;}
-LOOP 		{return mc_loop;}
-ARRAY 		{return mc_array;}
-VAR 		{return mc_var;}
-CONST		{return mc_const;}
-REAL 		{return mc_real;}
-CHAR 		{return mc_char;}
-STRING 		{return mc_string;}
-INTEGER		{return mc_integer;}
-READ 		{return mc_read;}
-WRITE 		{return mc_write;}
-While 		{return mc_while;}
-INF 		{return mc_inf;}
-SUP 		{return mc_sup;}
-EG 			{return mc_eg;}
-INFE 		{return mc_infe;}
-SUPE 		{return mc_supe;}
-DIFF 		{return mc_diff;}
-EXECUT 		{return mc_exec;}
-IF 			{return mc_if;}
-END_IF 		{return mc_end_if;}
-ELSE		{return mc_else;}
-{IDF}  			return idf;
-{cst_int}  		return cst_int;
-{cst_char}		return cst_char;
-{cst_real}		return cst_real;
-{cst_string} 	return cst_string;
+Programme 	{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return mc_programme;}
+				
+PROCESS 	{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return mc_process;}
+				
+LOOP 		{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return mc_loop;}
+				
+ARRAY 		{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return mc_array;}
+				
+VAR 		{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return mc_var;}
+				
+CONST		{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return mc_const;}
+				
+REAL 		{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return mc_real;}
+				
+CHAR 		{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return mc_char;}
+				
+STRING 		{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return mc_string;}
+				
+INTEGER		{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return mc_integer;}
+				
+READ 		{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return mc_read;}
+				
+WRITE 		{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return mc_write;}
+				
+While 		{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return mc_while;}
+				
+INF 		{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return mc_inf;}
+				
+SUP 		{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return mc_sup;}
+				
+EG 			{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return mc_eg;}
+				
+INFE 		{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return mc_infe;}
+				
+SUPE 		{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return mc_supe;}
+				
+DIFF 		{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return mc_diff;}
+				
+EXECUT 		{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return mc_exec;}
+				
+IF 			{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return mc_if;}
+END_IF 		{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return mc_end_if;}
+				
+ELSE		{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return mc_else;}
+				
+{IDF}  		{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				if (yyleng>10) printf ("Erreur Lexicale: IDF trop longue a la ligne %d a la colonne %d \n ",nb_ligne, Col);
+				return idf;}
+						
+{cst_int} {printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return cst_int;}
+				
+{cst_char}	{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return cst_char;}
+				
+{cst_real}	{printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return cst_real;}
+				
+{cst_string} {printf("L'entite lexicale reconnue est %s \n", yytext); 
+				Col= Col + strlen(yytext); 
+				return cst_string;}
 
-"#" 		return htag;
-"##"		return dble_htag;
-"$" 		return dollar;
-"::" 		return dble_point;
-":="		return aff;
-"[" 		return crochet_ovr;
-"]" 		return crochet_frm;
-"/"			return slash;
-"//"		return separateur;
-"+" 		return plus;
-"-" 		return moins;
-"="      	return egal;
-"*" 		return etoile;
-\" 			return dble_cote;
-"'"         return cote;
-"|" 		return barre;
-"@" 		return arobase;
-"(" 		return parnths_ovr;
-")" 		return parnths_frm;
-"%" 		return prcnt;
-"&" 		return et_com;
-"{" 		return acolad_ovr;
-"}" 		return acolad_frm;
+"#" 		{Col= Col + strlen(yytext); 
+				return htag;}
+"##"		{Col= Col + strlen(yytext); 
+				return dble_htag;}
+"$" 		{Col= Col + strlen(yytext); 
+				return dollar;}
+"::" 		{Col= Col + strlen(yytext); 
+				return dble_point;}
+":="		{Col= Col + strlen(yytext); 
+				return aff;}
+"[" 		{Col= Col + strlen(yytext); 
+				return crochet_ovr;}
+"]" 		{Col= Col + strlen(yytext); 
+				return crochet_frm;}
+"/"			{Col= Col + strlen(yytext); 
+				return slash;}
+"//"		{Col= Col + strlen(yytext); 
+				return separateur;}
+"+" 		{Col= Col + strlen(yytext); 
+				return plus;}
+"-" 		{Col= Col + strlen(yytext); 
+				return moins;}
+"="      	{Col= Col + strlen(yytext); 
+				return egal;}
+"*" 		{Col= Col + strlen(yytext); 
+				return etoile;}
+\" 			{Col= Col + strlen(yytext); 
+				return dble_cote;}
+"'"         {Col= Col + strlen(yytext); 
+				return cote;}
+"|" 		{Col= Col + strlen(yytext); 
+				return barre;}
+"@" 		{Col= Col + strlen(yytext); 
+				return arobase;}
+"(" 		{Col= Col + strlen(yytext); 
+				return parnths_ovr;}
+")" 		{Col= Col + strlen(yytext); 
+				return parnths_frm;}
+"%" 		{Col= Col + strlen(yytext); 
+				return prcnt;}
+"&" 		{Col= Col + strlen(yytext); 
+				return et_com;}
+"{" 		{Col= Col + strlen(yytext); 
+				return acolad_ovr;}
+"}" 		{Col= Col + strlen(yytext); 
+				return acolad_frm;}
+
+";"			{Col= Col + strlen(yytext); 
+				return pvg;}
+
+"?"			{Col= Col + strlen(yytext); 
+				return pt_interrogation;}
 
 
-[ \t] 
-\n   {nb_ligne++; }
-. {printf("erreur lexicale à la ligne %d \n",nb_ligne) ;
+[ \t] 	Col= Col + strlen(yytext);
+\n   	{Col= 1; nb_ligne++;}
+. {printf ("Entité lexicale non reconnue a ligne %d a la colonne %d \n", nb_ligne, Col);
     }
 %%

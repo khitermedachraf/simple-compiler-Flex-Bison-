@@ -89,7 +89,9 @@
      et_com = 305,
      acolad_ovr = 306,
      acolad_frm = 307,
-     dble_cote = 308
+     dble_cote = 308,
+     pvg = 309,
+     pt_interrogation = 310
    };
 #endif
 
