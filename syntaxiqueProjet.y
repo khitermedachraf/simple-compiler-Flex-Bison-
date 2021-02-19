@@ -7,7 +7,7 @@
 %start S
 %%
 S: LIST_BIBLIO mc_programme idf acolad_ovr PGM acolad_frm 
-   { printf(" Le programme est correcte syntaxiquement"); YYACCEPT; }
+   { printf("\n Le programme est correcte syntaxiquement. \n"); YYACCEPT; }
    |
 ;
 
@@ -69,6 +69,9 @@ SIGNE_FORMAT: pvg
 			| et_com
 ;
 INST_WRITE: ONE_WRITE
+			| STRING_WRITE
+;
+STRING_WRITE:mc_write parnths_ovr dble_cote AFFICH_ONE_WRITE dble_cote parnths_frm dollar
 ;
 ONE_WRITE: mc_write parnths_ovr dble_cote AFFICH_ONE_WRITE dble_cote barre idf parnths_frm dollar
 ;

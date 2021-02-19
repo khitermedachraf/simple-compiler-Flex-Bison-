@@ -3,20 +3,25 @@
 ##LOOP$
 Programme Acad
 {
+
 CONST   
 STRING :: S="mehdi" // S1="jhfgdfhgf"$
-CHAR :: C='c' // C1='g'$
 STRING :: Achraf="khitermohamed3545"$
+CHAR :: C='c' // C1='g'$
+
 VAR 
 INTEGER :: X1$
 INTEGER :: X2 // X3 $
 INTEGER :: X7$
 INTEGER :: Tab[3]$
+REAL :: Te_st$
 REAL :: Pi$
 STRING :: Shelby$
 STRING :: TabString[5]$
 CHAR :: Character$
 CHAR :: TabChar[1]$
+
+
 X6:=66$
 X7:= 77$
 X7:=X1$
@@ -30,5 +35,18 @@ X2:=1$
 TabChar[X2]:='k'$
 TabString[X2]:="hahah"$
 Pi:= 3.14$
+
+READ(";"|@X7)$
+READ("%"|@Pi)$
+READ("?"|@Shelby)$
+READ("&"|@Character)$
+
+WRITE("grgrgrgSi_mpleString")$
+WRITE(";"|X7)$
+WRITE("%"|Te_st)$
+WRITE("?"|Shelby)$
+WRITE("&"|Character)$
+
+
 
 }
