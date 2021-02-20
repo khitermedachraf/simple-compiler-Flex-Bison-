@@ -33,20 +33,42 @@ X7:=Tab[X2]$
 Tab[X2]:=X7$
 X2:=1$
 TabChar[X2]:='k'$
-TabString[X2]:="hahah"$
+TabString[X2]:="hah_ah"$
 Pi:= 3.14$
+
+X2:= X7 + X3$
+X2:= (X7)-444$
+X2:= X7/(555)$
+X2:= 5 + 3 -X3 /X6 *3$
+
+Pi:= (2.78)*(567)$
+
 
 READ(";"|@X7)$
 READ("%"|@Pi)$
 READ("?"|@Shelby)$
 READ("&"|@Character)$
 
-WRITE("grgrgrgSi_mpleString")$
 WRITE(";"|X7)$
 WRITE("%"|Te_st)$
 WRITE("?"|Shelby)$
 WRITE("&"|Character)$
 
+A:=(A)+(B)+(C)$
 
+While (A-2 INF A2[3])
+{
+WRITE ("comment_?" | Fu)$
+WRITE ("hello_%_comment_" | Ty)$
+}$
 
+EXECUT I:= 2+(4)$ IF (J EG 6) END_IF$
+
+EXECUT READ(";"|@TG6)$ IF (T[J] DIFF Ti)
+ELSE 
+EXECUT
+X:=A*(2.2)$
+END_IF$
+
+TabString[X2]:="hah_,!ah"$
 }

@@ -59,6 +59,26 @@ LIST_INSTRUCTION:INST LIST_INSTRUCTION
 INST: INST_AFF
 	| INST_READ
 	| INST_WRITE
+	| INST_WHILE
+	| INST_CONDITION
+;
+INST_CONDITION: IF_SIMPLE
+				| IF_ELSE
+;
+IF_SIMPLE: mc_exec LIST_INSTRUCTION mc_if parnths_ovr COND parnths_frm mc_end_if dollar
+;
+IF_ELSE: mc_exec LIST_INSTRUCTION mc_if parnths_ovr COND parnths_frm mc_else mc_exec LIST_INSTRUCTION mc_end_if dollar
+;
+INST_WHILE: mc_while parnths_ovr COND parnths_frm acolad_ovr LIST_INSTRUCTION acolad_frm dollar
+;
+COND: EXPRESSION_ARTHMTQ OPERATEUR_LOGIQUE EXPRESSION_ARTHMTQ
+;
+OPERATEUR_LOGIQUE: mc_eg
+				| mc_inf
+				| mc_sup
+				| mc_infe
+				| mc_supe
+				| mc_diff
 ;
 INST_READ: mc_read parnths_ovr dble_cote SIGNE_FORMAT dble_cote barre arobase idf parnths_frm dollar
 ;
@@ -68,46 +88,53 @@ SIGNE_FORMAT: pvg
 			| pt_interrogation
 			| et_com
 ;
-INST_WRITE: ONE_WRITE
-			| STRING_WRITE
+INST_WRITE:  ONE_WRITE
 ;
-STRING_WRITE:mc_write parnths_ovr dble_cote AFFICH_ONE_WRITE dble_cote parnths_frm dollar
-;
-ONE_WRITE: mc_write parnths_ovr dble_cote AFFICH_ONE_WRITE dble_cote barre idf parnths_frm dollar
+ONE_WRITE: mc_write parnths_ovr dble_cote AFFICH_ONE_WRITE dble_cote barre idf  parnths_frm dollar
 ;
 AFFICH_ONE_WRITE: SIGNE_FORMAT
-				| cst_string
 				| cst_string SIGNE_FORMAT
 				| cst_string SIGNE_FORMAT cst_string
-				| SIGNE_FORMAT cst_string
+				|SIGNE_FORMAT cst_string
+
 ;
 
-INST_AFF: idf aff idf dollar 
-        | idf aff cote cst_char cote dollar
+INST_AFF:  idf aff cote cst_char cote dollar
 		| idf aff dble_cote cst_string dble_cote dollar
-		| idf aff cst_int dollar
-		| idf aff cst_real dollar
-		| idf aff idf crochet_ovr cst_int crochet_frm dollar
-		| idf aff idf crochet_ovr idf crochet_frm dollar
+		| idf aff EXPRESSION_ARTHMTQ dollar
 
-		| idf crochet_ovr idf crochet_frm aff idf dollar 
 		| idf crochet_ovr idf crochet_frm aff cote cst_char cote dollar
 		| idf crochet_ovr idf crochet_frm aff dble_cote cst_string dble_cote dollar
-		| idf crochet_ovr idf crochet_frm aff cst_int dollar
-		| idf crochet_ovr idf crochet_frm aff cst_real dollar
-		| idf crochet_ovr idf crochet_frm aff idf crochet_ovr cst_int crochet_frm dollar
-		| idf crochet_ovr idf crochet_frm aff idf crochet_ovr idf crochet_frm dollar
-		
-		| idf crochet_ovr cst_int crochet_frm aff idf dollar 
+		| idf crochet_ovr idf crochet_frm aff EXPRESSION_ARTHMTQ dollar
+
+		| idf crochet_ovr cst_int crochet_frm aff EXPRESSION_ARTHMTQ dollar 
 		| idf crochet_ovr cst_int crochet_frm aff cote cst_char cote dollar
 		| idf crochet_ovr cst_int crochet_frm aff dble_cote cst_string dble_cote dollar
-		| idf crochet_ovr cst_int crochet_frm aff cst_int dollar
-		| idf crochet_ovr cst_int crochet_frm aff cst_real dollar
-		| idf crochet_ovr cst_int crochet_frm aff idf crochet_ovr cst_int crochet_frm dollar
-		| idf crochet_ovr cst_int crochet_frm aff idf crochet_ovr idf crochet_frm dollar
+;
+EXPRESSION_ARTHMTQ: OPERANDE OPERATEUR OPERANDE 
+					|OPERANDE
+					|parnths_ovr OPERANDE parnths_frm OPERATEUR OPERANDE
+					|OPERANDE OPERATEUR parnths_ovr OPERANDE parnths_frm
+					|parnths_ovr OPERANDE parnths_frm OPERATEUR parnths_ovr OPERANDE parnths_frm
+					|OPERANDE OPERATEUR OPERANDE OPERATEUR EXPRESSION_ARTHMTQ
+					|parnths_ovr OPERANDE parnths_frm
+					|parnths_ovr OPERANDE parnths_frm OPERATEUR OPERANDE OPERATEUR EXPRESSION_ARTHMTQ
+					|OPERANDE OPERATEUR parnths_ovr OPERANDE parnths_frm OPERATEUR EXPRESSION_ARTHMTQ
+					|parnths_ovr OPERANDE parnths_frm OPERATEUR parnths_ovr OPERANDE parnths_frm OPERATEUR EXPRESSION_ARTHMTQ
+					
+;
+OPERATEUR: plus
+		| moins
+		| slash
+		| etoile
+;
+OPERANDE: idf
+		| idf crochet_ovr cst_int crochet_frm
+		| idf crochet_ovr idf crochet_frm
+		| cst_int 
+		| cst_real
 
 ;
-
 LIST_BIBLIO: BIB LIST_BIBLIO
 			|
 ;	

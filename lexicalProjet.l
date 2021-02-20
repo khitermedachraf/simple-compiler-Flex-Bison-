@@ -6,10 +6,10 @@
 
 lettre [a-zA-Z]
 chiffre [0-9]
-IDF [A-Z]({lettre}|{chiffre})*
+IDF [A-Z]({lettre}|{chiffre}|[_])*
 cst_int {chiffre}+
 cst_char ({lettre}|{chiffre})
-cst_string ({lettre}|{chiffre})+
+cst_string ({lettre}|{chiffre}|[_]|[,]|[!])+
 cst_real ({chiffre}+[\.]({chiffre})+)|([(-]({chiffre}+[\.]({chiffre})+)[)])
 
 
