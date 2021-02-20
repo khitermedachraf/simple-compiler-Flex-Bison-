@@ -168,7 +168,10 @@ NOM_BIB: mc_process
 %%
 main ()
 {
+   initialisation();
    yyparse(); 
+   printf("\n");
+   afficher();
  }
  yywrap ()
  {}

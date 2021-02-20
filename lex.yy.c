@@ -504,10 +504,11 @@ char *yytext;
 #line 1 "lexicalProjet.l"
 #define INITIAL 0
 #line 2 "lexicalProjet.l"
-	#include "syntaxiqueProjet.tab.h"   
+	#include "syntaxiqueProjet.tab.h"  
+	#include "ts.h" 
     extern nb_ligne;
     extern Col;
-#line 511 "lex.yy.c"
+#line 512 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -658,10 +659,10 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 16 "lexicalProjet.l"
+#line 17 "lexicalProjet.l"
 
 
-#line 665 "lex.yy.c"
+#line 666 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -746,168 +747,168 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 18 "lexicalProjet.l"
+#line 19 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return mc_programme;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 22 "lexicalProjet.l"
+#line 23 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return mc_process;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 26 "lexicalProjet.l"
+#line 27 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return mc_loop;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 30 "lexicalProjet.l"
+#line 31 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return mc_array;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 34 "lexicalProjet.l"
+#line 35 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return mc_var;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 38 "lexicalProjet.l"
+#line 39 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return mc_const;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 42 "lexicalProjet.l"
+#line 43 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return mc_real;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 46 "lexicalProjet.l"
+#line 47 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return mc_char;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 50 "lexicalProjet.l"
+#line 51 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return mc_string;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 54 "lexicalProjet.l"
+#line 55 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return mc_integer;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 58 "lexicalProjet.l"
+#line 59 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return mc_read;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 62 "lexicalProjet.l"
+#line 63 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return mc_write;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 66 "lexicalProjet.l"
+#line 67 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return mc_while;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 70 "lexicalProjet.l"
+#line 71 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return mc_inf;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 74 "lexicalProjet.l"
+#line 75 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return mc_sup;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 78 "lexicalProjet.l"
+#line 79 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return mc_eg;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 82 "lexicalProjet.l"
+#line 83 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return mc_infe;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 86 "lexicalProjet.l"
+#line 87 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return mc_supe;}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 90 "lexicalProjet.l"
+#line 91 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return mc_diff;}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 94 "lexicalProjet.l"
+#line 95 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return mc_exec;}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 98 "lexicalProjet.l"
+#line 99 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return mc_if;}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 101 "lexicalProjet.l"
+#line 102 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return mc_end_if;}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 105 "lexicalProjet.l"
+#line 106 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return mc_else;}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 109 "lexicalProjet.l"
+#line 110 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				if (yyleng>10) printf ("Erreur Lexicale: IDF trop longue a la ligne %d a la colonne %d \n ",nb_ligne, Col);
@@ -915,204 +916,204 @@ YY_RULE_SETUP
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 114 "lexicalProjet.l"
+#line 115 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return cst_int;}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 118 "lexicalProjet.l"
+#line 119 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return cst_char;}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 122 "lexicalProjet.l"
+#line 123 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return cst_real;}
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 126 "lexicalProjet.l"
+#line 127 "lexicalProjet.l"
 {printf("L'entite lexicale reconnue est %s \n", yytext); 
 				Col= Col + strlen(yytext); 
 				return cst_string;}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 130 "lexicalProjet.l"
+#line 131 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return htag;}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 132 "lexicalProjet.l"
+#line 133 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return dble_htag;}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 134 "lexicalProjet.l"
+#line 135 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return dollar;}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 136 "lexicalProjet.l"
+#line 137 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return dble_point;}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 138 "lexicalProjet.l"
+#line 139 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return aff;}
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 140 "lexicalProjet.l"
+#line 141 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return crochet_ovr;}
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 142 "lexicalProjet.l"
+#line 143 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return crochet_frm;}
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 144 "lexicalProjet.l"
+#line 145 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return slash;}
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 146 "lexicalProjet.l"
+#line 147 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return separateur;}
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 148 "lexicalProjet.l"
+#line 149 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return plus;}
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 150 "lexicalProjet.l"
+#line 151 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return moins;}
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 152 "lexicalProjet.l"
+#line 153 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return egal;}
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 154 "lexicalProjet.l"
+#line 155 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return etoile;}
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 156 "lexicalProjet.l"
+#line 157 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return dble_cote;}
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 158 "lexicalProjet.l"
+#line 159 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return cote;}
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 160 "lexicalProjet.l"
+#line 161 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return barre;}
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 162 "lexicalProjet.l"
+#line 163 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return arobase;}
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 164 "lexicalProjet.l"
+#line 165 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return parnths_ovr;}
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 166 "lexicalProjet.l"
+#line 167 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return parnths_frm;}
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 168 "lexicalProjet.l"
+#line 169 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return prcnt;}
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 170 "lexicalProjet.l"
+#line 171 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return et_com;}
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 172 "lexicalProjet.l"
+#line 173 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return acolad_ovr;}
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 174 "lexicalProjet.l"
+#line 175 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return acolad_frm;}
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 177 "lexicalProjet.l"
+#line 178 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return pvg;}
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 180 "lexicalProjet.l"
+#line 181 "lexicalProjet.l"
 {Col= Col + strlen(yytext); 
 				return pt_interrogation;}
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 184 "lexicalProjet.l"
+#line 185 "lexicalProjet.l"
 Col= Col + strlen(yytext);
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 185 "lexicalProjet.l"
+#line 186 "lexicalProjet.l"
 {Col= 1; nb_ligne++;}
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
-#line 186 "lexicalProjet.l"
+#line 187 "lexicalProjet.l"
 {printf ("Entité lexicale non reconnue a ligne %d a la colonne %d \n", nb_ligne, Col);
     }
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 188 "lexicalProjet.l"
+#line 189 "lexicalProjet.l"
 ECHO;
 	YY_BREAK
-#line 1116 "lex.yy.c"
+#line 1117 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1998,5 +1999,5 @@ int main()
 	return 0;
 	}
 #endif
-#line 188 "lexicalProjet.l"
+#line 189 "lexicalProjet.l"
 

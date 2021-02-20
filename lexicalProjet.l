@@ -1,5 +1,6 @@
 %{
-	#include "syntaxiqueProjet.tab.h"   
+	#include "syntaxiqueProjet.tab.h"  
+	#include "ts.h" 
     extern nb_ligne;
     extern Col;
 %}

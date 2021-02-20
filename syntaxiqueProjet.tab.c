@@ -1805,7 +1805,10 @@ yyreturn:
 
 main ()
 {
+   initialisation();
    yyparse(); 
+   printf("\n");
+   afficher();
  }
  yywrap ()
  {}
