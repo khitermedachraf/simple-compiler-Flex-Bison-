@@ -53,6 +53,8 @@ WRITE(";"|X7)$
 WRITE("%"|Te_st)$
 WRITE("?"|Shelby)$
 WRITE("&"|Character)$
+WRITE("fghfgh_&_fgfg_?_dsgdfg"|Character//Shelby)$
+WRITE("fghfgh_&_fgfg_?_dsgdfg_;"|Character//Shelby//X7)$
 
 A:=(A)+(B)+(C)$
 

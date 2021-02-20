@@ -89,13 +89,32 @@ SIGNE_FORMAT: pvg
 			| et_com
 ;
 INST_WRITE:  ONE_WRITE
+			|WRITE
 ;
+WRITE: mc_write parnths_ovr dble_cote AFFICH_WRITE dble_cote barre idf separateur IDF_WRITE  parnths_frm dollar
+;
+IDF_WRITE: idf separateur IDF_WRITE
+			|idf
+;
+AFFICH_WRITE: 	SIGNE_FORMAT SIGNE_FORMAT
+				| cst_string SIGNE_FORMAT SIGNE_FORMAT
+				| SIGNE_FORMAT  cst_string SIGNE_FORMAT
+				| SIGNE_FORMAT SIGNE_FORMAT cst_string
+				| cst_string SIGNE_FORMAT cst_string SIGNE_FORMAT
+				| cst_string SIGNE_FORMAT  SIGNE_FORMAT cst_string
+				| SIGNE_FORMAT cst_string SIGNE_FORMAT cst_string
+				| cst_string SIGNE_FORMAT cst_string SIGNE_FORMAT cst_string
+				| AFFICH_WRITE ONE_SIGN_WRITE
+;
+ONE_SIGN_WRITE: SIGNE_FORMAT
+;
+
 ONE_WRITE: mc_write parnths_ovr dble_cote AFFICH_ONE_WRITE dble_cote barre idf  parnths_frm dollar
 ;
 AFFICH_ONE_WRITE: SIGNE_FORMAT
 				| cst_string SIGNE_FORMAT
+				| SIGNE_FORMAT cst_string
 				| cst_string SIGNE_FORMAT cst_string
-				|SIGNE_FORMAT cst_string
 
 ;
 
