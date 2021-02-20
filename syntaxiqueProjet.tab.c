@@ -160,7 +160,22 @@
 
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef int YYSTYPE;
+typedef union YYSTYPE
+{
+
+/* Line 214 of yacc.c  */
+#line 6 "syntaxiqueProjet.y"
+
+         int	entier;
+		 float	real;	
+		 char	character; 
+         char*	string;
+
+
+
+/* Line 214 of yacc.c  */
+#line 178 "syntaxiqueProjet.tab.c"
+} YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
@@ -171,7 +186,7 @@ typedef int YYSTYPE;
 
 
 /* Line 264 of yacc.c  */
-#line 175 "syntaxiqueProjet.tab.c"
+#line 190 "syntaxiqueProjet.tab.c"
 
 #ifdef short
 # undef short
@@ -513,17 +528,17 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,     9,     9,    11,    14,    15,    18,    19,    22,    24,
-      25,    26,    27,    30,    31,    32,    33,    38,    39,    42,
-      44,    45,    46,    47,    48,    49,    50,    51,    55,    56,
-      59,    60,    61,    62,    63,    65,    66,    68,    70,    72,
-      74,    76,    77,    78,    79,    80,    81,    83,    86,    87,
-      88,    89,    91,    92,    94,    96,    97,    99,   100,   101,
-     102,   103,   104,   105,   106,   107,   109,   112,   114,   115,
-     116,   117,   121,   122,   123,   125,   126,   127,   129,   130,
-     131,   133,   134,   135,   136,   137,   138,   139,   140,   141,
-     142,   145,   146,   147,   148,   150,   151,   152,   153,   154,
-     157,   158,   160,   163,   164,   165
+       0,    16,    16,    18,    21,    22,    25,    26,    29,    31,
+      32,    33,    34,    37,    38,    39,    40,    45,    46,    49,
+      51,    52,    53,    54,    55,    56,    57,    58,    62,    63,
+      66,    67,    68,    69,    70,    72,    73,    75,    77,    79,
+      81,    83,    84,    85,    86,    87,    88,    90,    93,    94,
+      95,    96,    98,    99,   101,   103,   104,   106,   107,   108,
+     109,   110,   111,   112,   113,   114,   116,   119,   121,   122,
+     123,   124,   128,   129,   130,   132,   133,   134,   136,   137,
+     138,   140,   141,   142,   143,   144,   145,   146,   147,   148,
+     149,   152,   153,   154,   155,   157,   158,   159,   160,   161,
+     164,   165,   167,   170,   171,   172
 };
 #endif
 
@@ -1582,14 +1597,14 @@ yyreduce:
         case 2:
 
 /* Line 1455 of yacc.c  */
-#line 10 "syntaxiqueProjet.y"
+#line 17 "syntaxiqueProjet.y"
     { printf("\n Le programme est correcte syntaxiquement. \n"); YYACCEPT; ;}
     break;
 
 
 
 /* Line 1455 of yacc.c  */
-#line 1593 "syntaxiqueProjet.tab.c"
+#line 1608 "syntaxiqueProjet.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1801,7 +1816,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 168 "syntaxiqueProjet.y"
+#line 175 "syntaxiqueProjet.y"
 
 main ()
 {

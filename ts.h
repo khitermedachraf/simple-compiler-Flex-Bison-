@@ -87,7 +87,7 @@ switch(y)
 	      
          }
         else
-          printf("entité existe déjà\n");
+          printf("entite (%s) existe deja\n",entite);
         break;
 
    case 1:/*verifier si la case dans la tables des mots clés est libre*/
@@ -96,7 +96,7 @@ switch(y)
         if(i<40)
           inserer(entite,code,type,val,i,1);
         else
-          printf("entité existe déjà\n");
+          printf("entite (%s) existe deja\n",entite);
         break; 
     
    case 2:/*verifier si la case dans la tables des séparateurs est libre*/
@@ -104,17 +104,9 @@ switch(y)
         if(i<40)
          inserer(entite,code,type,val,i,2);
         else
-   	       printf("entité existe déjà\n");
+   	       printf("entite (%s) existe deja\n",entite);
         break;
 
-    case 3:/*verifier si la case dans la tables des IDF et CONST est libre*/
-        for (i=0;((i<1000)&&(tab[i].state==1))&&(strcmp(entite,tab[i].name)!=0);i++); 
-                  
-        if (i<1000)
-        { inserer(entite,code,type,val,i,0); }
-        else
-          printf("entité existe déjà\n");
-        break;
   }
 
 }
@@ -137,7 +129,7 @@ void afficher() {
     }
 
  
-    printf("\n/***************Table des symboles mots clés*************/\n");
+    printf("\n/***************Table des symboles mots cles*************/\n");
 
     printf("_____________________________________\n");
     printf("\t| NomEntite |  CodeEntite | \n");
@@ -149,7 +141,7 @@ void afficher() {
         }
     }
 
-    printf("\n/***************Table des symboles séparateurs*************/\n");
+    printf("\n/***************Table des symboles separateurs*************/\n");
 
     printf("_____________________________________\n");
     printf("\t| NomEntite |  CodeEntite | \n");
