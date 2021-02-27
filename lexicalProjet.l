@@ -9,10 +9,11 @@
 lettre [a-zA-Z]
 chiffre [0-9]
 IDF [A-Z]({lettre}|{chiffre}|[_])*
-cst_int {chiffre}+
+cst_int [-+]?{chiffre}+
 cst_char ({lettre}|{chiffre})
 cst_string ({lettre}|{chiffre}|[_]|[,]|[!])+
 cst_real ({chiffre}+[\.]({chiffre})+)|([(-]({chiffre}+[\.]({chiffre})+)[)])
+commentaire "/*"([^*]|\*+[^*/])*\*+"/"
 
 
 %%
@@ -161,6 +162,20 @@ ELSE		{	printf("L'entite lexicale reconnue est %s \n", yytext);
 				rechercher(yytext,"CONSTANT","STRING",atof(yytext),0);
 				Col= Col + strlen(yytext); 
 				return cst_string;}
+
+{commentaire} { printf("L'entite lexicale est reconnue comme commentaire \n"); 
+				{
+        			// The code below, the counts number of occurance of \n and then adds
+        			// the number to the numberOfCurrentLine variable
+       				// to keep the number of current line
+					char* str = yytext;
+					char *ptrChar=strchr(str,'\n'); // ptrChar un pointeur vers le caractere '\n' de la variable str 
+					while (ptrChar!=NULL) {
+						nb_ligne++;
+						ptrChar=strchr(ptrChar+1,'\n');
+					}
+    }
+				}
 
 "#" 		{Col= Col + strlen(yytext); 
 			rechercher(yytext,"Separateur",0,0,2);

@@ -10,7 +10,7 @@
          char*	string;
 }
 
-%token  mc_programme mc_process mc_loop mc_array mc_var mc_const mc_real mc_char mc_string mc_integer mc_read mc_write mc_while mc_inf mc_sup mc_eg mc_infe mc_supe mc_diff mc_exec mc_if mc_end_if mc_else <string>idf <entier>cst_int <character>cst_char <real>cst_real <string>cst_string htag dble_htag dollar dble_point aff crochet_ovr crochet_frm slash separateur plus moins egal etoile cote barre arobase parnths_ovr parnths_frm prcnt et_com acolad_ovr acolad_frm dble_cote pvg pt_interrogation
+%token  mc_programme mc_process mc_loop mc_array mc_var mc_const mc_real mc_char mc_string mc_integer mc_read mc_write mc_while mc_inf mc_sup mc_eg mc_infe mc_supe mc_diff mc_exec mc_if mc_end_if mc_else <string>idf <entier>cst_int <character>cst_char <real>cst_real <string>cst_string htag dble_htag dollar dble_point aff crochet_ovr crochet_frm slash separateur plus moins egal etoile cote barre arobase parnths_ovr parnths_frm prcnt et_com acolad_ovr acolad_frm dble_cote pvg pt_interrogation 
 %start S
 %%
 S: LIST_BIBLIO mc_programme idf acolad_ovr PGM acolad_frm 
@@ -37,7 +37,13 @@ TYPE: mc_integer
 LIST_IDF: idf separateur LIST_IDF
         | idf
 		| idf crochet_ovr cst_int crochet_frm separateur LIST_IDF
+				{
+				if ($3<=0) printf("Erreur sementique : un tableau ne peux pas avoir une taille inferieure ou egale a 0 \n");
+			} 
 		| idf crochet_ovr cst_int crochet_frm
+					{
+				if ($3<=0) printf("Erreur sementique : un tableau ne peux pas avoir une taille inferieure ou egale a 0 \n");
+			} 
 ;  
 
 
@@ -130,12 +136,29 @@ INST_AFF:  idf aff cote cst_char cote dollar
 		| idf aff EXPRESSION_ARTHMTQ dollar
 
 		| idf crochet_ovr idf crochet_frm aff cote cst_char cote dollar
+				{
+				if ($3<=0) printf("Erreur sementique : un tableau ne peux pas avoir une taille inferieure ou egale a 0 \n");
+			}
 		| idf crochet_ovr idf crochet_frm aff dble_cote cst_string dble_cote dollar
+					{
+				if ($3<=0) printf("Erreur sementique : un tableau ne peux pas avoir une taille inferieure ou egale a 0 \n");
+			}
 		| idf crochet_ovr idf crochet_frm aff EXPRESSION_ARTHMTQ dollar
-
-		| idf crochet_ovr cst_int crochet_frm aff EXPRESSION_ARTHMTQ dollar 
+					{
+				if ($3<=0) printf("Erreur sementique : un tableau ne peux pas avoir une taille inferieure ou egale a 0 \n");
+			}
+		| idf crochet_ovr cst_int crochet_frm aff EXPRESSION_ARTHMTQ dollar
+				{
+				if ($3<=0) printf("Erreur sementique : un tableau ne peux pas avoir une taille inferieure ou egale a 0 \n");
+			} 
 		| idf crochet_ovr cst_int crochet_frm aff cote cst_char cote dollar
+						{
+				if ($3<=0) printf("Erreur sementique : un tableau ne peux pas avoir une taille inferieure ou egale a 0 \n");
+			} 
 		| idf crochet_ovr cst_int crochet_frm aff dble_cote cst_string dble_cote dollar
+				{
+				if ($3<=0) printf("Erreur sementique : un tableau ne peux pas avoir une taille inferieure ou egale a 0 \n");
+			} 
 ;
 EXPRESSION_ARTHMTQ: OPERANDE OPERATEUR OPERANDE 
 					|OPERANDE
@@ -156,7 +179,12 @@ OPERATEUR: plus
 ;
 OPERANDE: idf
 		| idf crochet_ovr cst_int crochet_frm
+				{
+				if ($3<=0) printf("Erreur sementique : un tableau ne peux pas avoir une taille inferieure ou egale a 0 \n");
+			} 	
 		| idf crochet_ovr idf crochet_frm
+				{
+			if ($3<=0) printf("Erreur sementique : un tableau ne peux pas avoir une taille inferieure ou egale a 0 \n");			} 
 		| cst_int 
 		| cst_real
 

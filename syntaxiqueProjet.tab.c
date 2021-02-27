@@ -529,16 +529,16 @@ static const yytype_int8 yyrhs[] =
 static const yytype_uint8 yyrline[] =
 {
        0,    16,    16,    18,    21,    22,    25,    26,    29,    31,
-      32,    33,    34,    37,    38,    39,    40,    45,    46,    49,
-      51,    52,    53,    54,    55,    56,    57,    58,    62,    63,
-      66,    67,    68,    69,    70,    72,    73,    75,    77,    79,
-      81,    83,    84,    85,    86,    87,    88,    90,    93,    94,
-      95,    96,    98,    99,   101,   103,   104,   106,   107,   108,
-     109,   110,   111,   112,   113,   114,   116,   119,   121,   122,
-     123,   124,   128,   129,   130,   132,   133,   134,   136,   137,
-     138,   140,   141,   142,   143,   144,   145,   146,   147,   148,
-     149,   152,   153,   154,   155,   157,   158,   159,   160,   161,
-     164,   165,   167,   170,   171,   172
+      32,    33,    34,    37,    38,    39,    43,    51,    52,    55,
+      57,    58,    59,    60,    61,    62,    63,    64,    68,    69,
+      72,    73,    74,    75,    76,    78,    79,    81,    83,    85,
+      87,    89,    90,    91,    92,    93,    94,    96,    99,   100,
+     101,   102,   104,   105,   107,   109,   110,   112,   113,   114,
+     115,   116,   117,   118,   119,   120,   122,   125,   127,   128,
+     129,   130,   134,   135,   136,   138,   142,   146,   150,   154,
+     158,   163,   164,   165,   166,   167,   168,   169,   170,   171,
+     172,   175,   176,   177,   178,   180,   181,   185,   188,   189,
+     192,   193,   195,   198,   199,   200
 };
 #endif
 
@@ -1601,10 +1601,99 @@ yyreduce:
     { printf("\n Le programme est correcte syntaxiquement. \n"); YYACCEPT; ;}
     break;
 
+  case 15:
+
+/* Line 1455 of yacc.c  */
+#line 40 "syntaxiqueProjet.y"
+    {
+				if ((yyvsp[(3) - (6)].entier)<=0) printf("Erreur sementique : un tableau ne peux pas avoir une taille inferieure ou egale a 0 \n");
+			;}
+    break;
+
+  case 16:
+
+/* Line 1455 of yacc.c  */
+#line 44 "syntaxiqueProjet.y"
+    {
+				if ((yyvsp[(3) - (4)].entier)<=0) printf("Erreur sementique : un tableau ne peux pas avoir une taille inferieure ou egale a 0 \n");
+			;}
+    break;
+
+  case 75:
+
+/* Line 1455 of yacc.c  */
+#line 139 "syntaxiqueProjet.y"
+    {
+				if ((yyvsp[(3) - (9)].string)<=0) printf("Erreur sementique : un tableau ne peux pas avoir une taille inferieure ou egale a 0 \n");
+			;}
+    break;
+
+  case 76:
+
+/* Line 1455 of yacc.c  */
+#line 143 "syntaxiqueProjet.y"
+    {
+				if ((yyvsp[(3) - (9)].string)<=0) printf("Erreur sementique : un tableau ne peux pas avoir une taille inferieure ou egale a 0 \n");
+			;}
+    break;
+
+  case 77:
+
+/* Line 1455 of yacc.c  */
+#line 147 "syntaxiqueProjet.y"
+    {
+				if ((yyvsp[(3) - (7)].string)<=0) printf("Erreur sementique : un tableau ne peux pas avoir une taille inferieure ou egale a 0 \n");
+			;}
+    break;
+
+  case 78:
+
+/* Line 1455 of yacc.c  */
+#line 151 "syntaxiqueProjet.y"
+    {
+				if ((yyvsp[(3) - (7)].entier)<=0) printf("Erreur sementique : un tableau ne peux pas avoir une taille inferieure ou egale a 0 \n");
+			;}
+    break;
+
+  case 79:
+
+/* Line 1455 of yacc.c  */
+#line 155 "syntaxiqueProjet.y"
+    {
+				if ((yyvsp[(3) - (9)].entier)<=0) printf("Erreur sementique : un tableau ne peux pas avoir une taille inferieure ou egale a 0 \n");
+			;}
+    break;
+
+  case 80:
+
+/* Line 1455 of yacc.c  */
+#line 159 "syntaxiqueProjet.y"
+    {
+				if ((yyvsp[(3) - (9)].entier)<=0) printf("Erreur sementique : un tableau ne peux pas avoir une taille inferieure ou egale a 0 \n");
+			;}
+    break;
+
+  case 96:
+
+/* Line 1455 of yacc.c  */
+#line 182 "syntaxiqueProjet.y"
+    {
+				if ((yyvsp[(3) - (4)].entier)<=0) printf("Erreur sementique : un tableau ne peux pas avoir une taille inferieure ou egale a 0 \n");
+			;}
+    break;
+
+  case 97:
+
+/* Line 1455 of yacc.c  */
+#line 186 "syntaxiqueProjet.y"
+    {
+			if ((yyvsp[(3) - (4)].string)<=0) printf("Erreur sementique : un tableau ne peux pas avoir une taille inferieure ou egale a 0 \n");			;}
+    break;
+
 
 
 /* Line 1455 of yacc.c  */
-#line 1608 "syntaxiqueProjet.tab.c"
+#line 1697 "syntaxiqueProjet.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1816,7 +1905,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 175 "syntaxiqueProjet.y"
+#line 203 "syntaxiqueProjet.y"
 
 main ()
 {
