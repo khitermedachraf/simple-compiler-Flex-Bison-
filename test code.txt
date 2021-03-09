@@ -1,6 +1,7 @@
-##PROCESS$
+
 ##ARRAY$
 ##LOOP$
+
 Programme Acad
 {
 
@@ -20,6 +21,7 @@ INTEGER :: TabNegatif[-4]$
 REAL :: Te_st$
 REAL :: Pi$
 STRING :: Shelby$
+STRING :: Fu$
 STRING :: TabString[5]$
 CHAR :: Character$
 CHAR :: TabChar[1]$
@@ -51,13 +53,18 @@ READ(";"|@X7)$
 READ("%"|@Pi)$
 READ("?"|@Shelby)$
 READ("&"|@Character)$
+READ("&"|@Pi)$
 
-WRITE(";"|X7)$
+
+WRITE(";"|Shelby)$
 WRITE("%"|Te_st)$
 WRITE("?"|Shelby)$
-WRITE("&"|Character)$
+WRITE("&&"|Character//Character)$
 WRITE("fghfgh_&_fgfg_?_dsgdfg"|Character//Shelby)$
-WRITE("fghfgh_&_fgfg_?_dsgdfg_;"|Character//Shelby//X7)$
+WRITE("fghfgh&fgfg_?_dsgdfg_;"|Character//Shelby//X7)$
+WRITE("fghfgh_&_fgfg_?_dsgdfg"|Shelby // Character)$
+
+
 
 A:=(A)+(B)+(C)$
 
@@ -86,5 +93,7 @@ X:=A*(2.2)$
 END_IF$
 
 TabString[X2]:="hah_,!ah"$
+While (A - 2 INF A2[3]){}$
+Mehdi2021:= 1$
 /* la fin */
 }
